@@ -2,13 +2,14 @@ from map import Map
 
 
 def run() -> None:
-    while True:
+    exit = False
+    map_width, map_height = 50, 25
+    while not exit:
+        game_map = Map(map_width, map_height)
         game_map.display_map()
-        input("> ")
+        if input("> ") == "q":
+            exit = True
 
 
 if __name__ == "__main__":
-    map_width, map_height = 30, 15
-    game_map = Map(map_width, map_height)
     run()
-
